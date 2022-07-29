@@ -41,7 +41,7 @@ const generator = (
         },
         // 该路由对应页面的 组件 (动态加载 @/views/ 下面的路径文件)
         component: () =>
-          import(/* @vite-ignore */ "../views/" + item.component + ".vue"),
+          import(/* @vite-ignore */ `../views/${item.component}.vue`),
       };
 
       // 为了防止出现后端返回结果不规范，处理有可能出现拼接出两个 反斜杠
