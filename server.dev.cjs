@@ -2,11 +2,57 @@
 const fs = require("fs");
 const path = require("path");
 const express = require("express");
+const httpStatus = require("http-status");
 
 async function createServer(root = process.cwd()) {
   const resolve = (p) => path.resolve(__dirname, p);
 
   const app = express();
+
+  const router = express.Router();
+
+  router.get('/currentUserNav', (req, res) => {
+    res.status(httpStatus.OK).json([
+      {
+        name: 'dashboard',
+        parentId: 0,
+        id: 1,
+        meta: {
+          icon: 'HeartOutlined',
+          title: 'pages.dashboard.title',
+          show: true,
+        },
+        component: 'RouteView',
+        redirect: '/demo1',
+      },
+      {
+        name: 'workplace',
+        parentId: 1,
+        id: 7,
+        meta: {
+          icon: 'HistoryOutlined',
+          title: 'pages.dashboard.workplace.title',
+          show: true,
+        },
+        component: 'Demo1',
+        path: '/demo1',
+      },
+      {
+        name: 'Analysis',
+        parentId: 1,
+        id: 2,
+        meta: {
+          icon: 'HeartOutlined',
+          title: 'pages.dashboard.analysis.title',
+          show: true,
+        },
+        component: 'Demo2',
+        path: '/demo2',
+      },
+    ]);
+  });
+
+  app.use('/api', router);
 
   /**
    * @type {import('vite').ViteDevServer}
