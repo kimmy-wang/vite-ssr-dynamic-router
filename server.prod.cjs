@@ -14,40 +14,28 @@ const router = express.Router();
 router.get('/currentUserNav', (req, res) => {
   res.status(httpStatus.OK).json([
     {
-      name: 'dashboard',
+      name: 'Home',
       parentId: 0,
-      id: 1,
-      meta: {
-        icon: 'HeartOutlined',
-        title: 'pages.dashboard.title',
-        show: true,
-      },
-      component: 'RouteView',
-      redirect: '/demo1',
-    },
-    {
-      name: 'workplace',
-      parentId: 1,
       id: 7,
       meta: {
         icon: 'HistoryOutlined',
         title: 'pages.dashboard.workplace.title',
         show: true,
       },
-      component: 'Demo1',
-      path: '/demo1',
+      component: 'HomeView',
+      path: '/home',
     },
     {
-      name: 'Analysis',
-      parentId: 1,
+      name: 'About',
+      parentId: 0,
       id: 2,
       meta: {
         icon: 'HeartOutlined',
         title: 'pages.dashboard.analysis.title',
         show: true,
       },
-      component: 'Demo2',
-      path: '/demo2',
+      component: 'AboutView',
+      path: '/about',
     },
   ]);
 });

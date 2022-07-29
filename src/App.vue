@@ -19,10 +19,8 @@ const menuStore = useMenuStore();
       <HelloWorld msg="You did it!" />
 
       <nav>
-        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/home">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/demo1">Demo1</RouterLink>
-        <RouterLink to="/demo2">Demo2</RouterLink>
       </nav>
     </div>
   </header>

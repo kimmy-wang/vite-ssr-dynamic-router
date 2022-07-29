@@ -7,6 +7,7 @@ import { getCurrentUserNav } from "@/apis/user/login";
 const rootRouter: MenuDataItem = {
   name: "index",
   path: "/",
+  redirect: "/home",
   meta: {
     title: "首页",
   },

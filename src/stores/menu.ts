@@ -14,6 +14,7 @@ export const useMenuStore = defineStore({
       return new Promise<RouteRecordRaw>((resolve) => {
         generatorDynamicRouter()
           .then((routes: RouteRecordRaw) => {
+            console.log("routes", JSON.stringify(routes));
             const allowRoutes = routes.children || [];
             // 添加到路由表
             router.addRoute(routes);
