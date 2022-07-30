@@ -34,7 +34,7 @@ async function createServer(root = process.cwd()) {
           title: 'pages.dashboard.analysis.title',
           show: true,
         },
-        component: 'AboutView',
+        component: 'about/index',
         path: '/about',
       },
     ]);

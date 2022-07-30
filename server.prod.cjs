@@ -34,7 +34,7 @@ router.get('/currentUserNav', (req, res) => {
         title: 'pages.dashboard.analysis.title',
         show: true,
       },
-      component: 'AboutView',
+      component: 'about/index',
       path: '/about',
     },
   ]);
